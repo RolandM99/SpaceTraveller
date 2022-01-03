@@ -1,6 +1,6 @@
 // actions
 const FETCH_ROCKETS = 'FETCH_ROCKETS';
-// const CREATE_RESERVE = 'CREATE_RESERVE';
+const CREATE_RESERVE = 'CREATE_RESERVE';
 
 // constant apiUrl
 const baseUrl = 'https://api.spacexdata.com/v3/rockets';
@@ -14,6 +14,11 @@ const initialState = {
 
 export const getRockets = (payload) => ({
   type: FETCH_ROCKETS,
+  payload,
+});
+
+export const createReserve = (payload) => ({
+  type: CREATE_RESERVE,
   payload,
 });
 
@@ -31,6 +36,15 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROCKETS:
       return { ...state, rockets: action.payload };
+    case CREATE_RESERVE: {
+      const changeState = state.rockets.map((el) => {
+        if (el.id === action.payload.id) {
+          return { ...el, reserve: action.payload.reserve };
+        }
+        return el;
+      });
+      return { ...state, rockets: changeState };
+    }
     default:
       return state;
   }
