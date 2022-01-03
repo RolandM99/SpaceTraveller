@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
-import rocketReducer from '../reducers';
+import reducers from '../reducers';
 
 const reducer = combineReducers({
-  rocketReducer,
+  reducers,
   // additional reducers could be added here
 });
 
