@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getRocketFromApi } from '../redux/reducers';
+import Rock from './rocketItem';
 
 const Rockets = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,9 @@ const Rockets = () => {
   }, []);
   return (
     <div className="rockets">
-      <h1>Hello world</h1>
+      {rockets.rockets.map((rock) => (
+        <Rock key={rock.id} rock={rock} />
+      ))}
     </div>
   );
 };
