@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import MissionsComponent from './missionItem';
+import MissionsComponent from './MissionItem';
 import { getMissionFromApi } from '../redux/reducers';
 
 const MissionList = () => {
