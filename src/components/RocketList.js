@@ -6,7 +6,6 @@ import Rock from './RocketItem';
 const Rockets = () => {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.reducers);
-  console.log(rockets);
 
   useEffect(() => {
     if (!rockets.rockets[0]) {
