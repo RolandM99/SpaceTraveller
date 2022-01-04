@@ -5,7 +5,8 @@ const Rock = (props) => {
   const rocket = props;
   const dispatch = useDispatch();
   const { reserve } = rocket.rock;
-  const handleReserve = () => {
+  const handleReserve = (e) => {
+    e.target.classList.toggle('reservedButton');
     const toggle = !reserve;
     const setReserve = (() => ({ ...rocket.rock, reserve: toggle }));
     dispatch(createReserve(setReserve()));
@@ -21,7 +22,7 @@ const Rock = (props) => {
           {reserve && <small> Reserved </small>}
           {rocket.rock.description}
         </p>
-        <button onClick={handleReserve} type="button">{reserve ? 'cancel Reservation' : 'Reserve Rocket'}</button>
+        <button onClick={(e) => handleReserve(e)} type="button">{reserve ? 'Cancel Reservation' : 'Reserve Rocket'}</button>
       </div>
     </div>
   );

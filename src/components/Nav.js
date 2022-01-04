@@ -9,10 +9,10 @@ const Nav = () => (
         Space Traveller&apos;s Hub
       </h1>
       <ul className="nav-link">
-        <NavLink activeClassName="selected" to="/">Rockets</NavLink>
-        <NavLink activeClassName="selected" id="mission" to="/missions">Missions</NavLink>
-        <NavLink activeClassName="selected" to="/dragon">Dragon</NavLink>
-        <NavLink activeClassName="selected" to="/myprofile">My Profile</NavLink>
+        <NavLink activeclassname="selected" to="/">Rockets</NavLink>
+        <NavLink activeclassname="selected" id="mission" to="/missions">Missions</NavLink>
+        <NavLink activeclassname="selected" to="/dragon">Dragon</NavLink>
+        <NavLink activeclassname="selected" to="/myprofile">My Profile</NavLink>
       </ul>
     </nav>
   </div>

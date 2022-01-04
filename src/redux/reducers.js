@@ -3,15 +3,19 @@ const FETCH_ROCKETS = 'FETCH_ROCKETS';
 const CREATE_RESERVE = 'CREATE_RESERVE';
 const FETCH_MISSIONS = 'FEATCH_MISSIONS';
 const CREATE_JOIN = 'CREATE_JOIN';
+const FETCH_DRAGONS = 'FETCH_DRAGONS';
+const CREATE_RESERVATION = 'CREATE_RESERVATION';
 
 // constant apiUrl
 const baseUrl = 'https://api.spacexdata.com/v3/rockets';
 const missionUrl = 'https://api.spacexdata.com/v3/missions';
+const dragonUrl = 'https://api.spacexdata.com/v3/dragons';
 
 // intial state
 const initialState = {
   rockets: [],
   missions: [],
+  dragons: [],
 };
 
 // create action creators return object
@@ -36,12 +40,28 @@ export const createJoin = (payload) => ({
   payload,
 });
 
+export const getDragons = (payload) => ({
+  type: FETCH_DRAGONS,
+  payload,
+});
+
+export const createReservation = (payload) => ({
+  type: CREATE_RESERVATION,
+  payload,
+});
+
 // Action creator that return a function
 
 export const getRocketFromApi = () => async (dispatch) => {
   const request = await fetch(baseUrl);
   const response = await request.json();
   dispatch(getRockets(response));
+};
+
+export const getDragonFromApi = () => async (dispatch) => {
+  const request = await fetch(dragonUrl);
+  const response = await request.json();
+  dispatch(getDragons(response));
 };
 
 export const getMissionFromApi = () => async (dispatch) => {
@@ -76,6 +96,19 @@ const reducer = (state = initialState, action) => {
       });
       return { ...state, missions: changeJoin };
     }
+
+    case FETCH_DRAGONS:
+      return { ...state, dragons: action.payload };
+    case CREATE_RESERVATION: {
+      const changeState = state.dragons.map((el) => {
+        if (el.id === action.payload.id) {
+          return { ...el, reservation: action.payload.reservation };
+        }
+        return el;
+      });
+      return { ...state, dragons: changeState };
+    }
+
     default:
       return state;
   }

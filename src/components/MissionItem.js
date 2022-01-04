@@ -6,7 +6,8 @@ const Missions = (props) => {
   const prop = props;
   const dispatch = useDispatch();
   const { join } = prop.mission;
-  const handleJoin = () => {
+  const handleJoin = (e) => {
+    e.target.classList.toggle('reservedButton');
     const toggleJoin = !join;
     const setJoin = (() => ({ ...prop.mission, join: toggleJoin }));
     dispatch(createJoin(setJoin()));
@@ -19,7 +20,7 @@ const Missions = (props) => {
         <p className={join ? 'member' : 'not-member'}>{join ? 'Active Member' : 'Not a Member'}</p>
       </td>
       <td className="fourth-col">
-        <button onClick={handleJoin} type="button">{join ? 'Leave Mission' : 'Join Mission'}</button>
+        <button onClick={(e) => handleJoin(e)} type="button">{join ? 'Leave Mission' : 'Join Mission'}</button>
       </td>
     </tr>
   );

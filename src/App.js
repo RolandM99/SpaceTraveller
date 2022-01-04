@@ -3,7 +3,7 @@ import Nav from './components/Nav';
 import Missions from './components/MissionList';
 import Rockets from './components/RocketList';
 import MyProfile from './components/MyProfile';
-import Dragon from './components/Dragon';
+import Dragons from './components/Dragons';
 
 const App = () => (
   <BrowserRouter>
@@ -11,7 +11,7 @@ const App = () => (
     <Routes>
       <Route exact path="/" element={<Rockets />} />
       <Route path="/missions" element={<Missions />} />
-      <Route path="/dragon" element={<Dragon />} />
+      <Route path="/dragon" element={<Dragons />} />
       <Route path="/myprofile" element={<MyProfile />} />
     </Routes>
   </BrowserRouter>
