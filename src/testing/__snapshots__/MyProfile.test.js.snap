@@ -28,7 +28,7 @@ exports[`MyProfile Component test Renders MyProfile 1`] = `
     className="profile"
   >
     <h3>
-      My Daragons
+      My Dragons
     </h3>
     <ul
       className="list"
