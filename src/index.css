@@ -5,6 +5,11 @@ body {
 .wrapper {
   display: flex;
   align-items: center;
+  margin: 2rem 0 2rem 0;
+}
+
+.rockets {
+  padding: 0 30px;
 }
 
 h1 {
@@ -76,9 +81,12 @@ a:hover {
 }
 
 small {
-  background-color: #0290ff;
-  font-size: 18px;
+  background-color: #33a5ad;
+  color: #fff;
+  font-size: 15px;
   margin-right: 5px;
+  border-radius: 10%;
+  padding: 2px;
 }
 
 .first-col {
@@ -155,11 +163,24 @@ tr:nth-child(even) {
 
 .list li {
   border: 1px solid gray;
-  width: 500px;
+  width: 15rem;
   padding: 15px 25px;
 }
 
 .active {
   text-decoration: underline;
   color: black;
+}
+
+button {
+  background-color: #0290ff;
+  color: #fff;
+  border: 1px solid #0290ff;
+  border-radius: 5%;
+  padding: 0.5rem;
+}
+
+.reservedButton {
+  background-color: #fff;
+  color: #0290ff;
 }

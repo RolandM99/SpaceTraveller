@@ -4,6 +4,7 @@ const Myprofile = () => {
   const globaState = useSelector((state) => state.reducers);
   const reservedItems = globaState.rockets.filter((item) => item.reserve === true);
   const missionItems = globaState.missions.filter((item) => item.join === true);
+  const dragonRervation = globaState.dragons.filter((dragon) => dragon.reservation === true);
 
   return (
     <div className="wrapper_profile">
@@ -24,11 +25,11 @@ const Myprofile = () => {
         </ul>
       </div>
       <div className="profile">
-        <h3>My Daragons</h3>
+        <h3>My Dragons</h3>
         <ul className="list">
           {
-            missionItems.map((mission) => (
-              <li key={mission.mission_name}>{mission.mission_name}</li>
+            dragonRervation.map((dragon) => (
+              <li key={dragon.id}>{dragon.name}</li>
             ))
           }
         </ul>
