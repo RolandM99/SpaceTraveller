@@ -14,7 +14,7 @@ Space Traveller hub is a web application that works with the real live data from
 
 ## Live Demo
 
-[Live link]()
+[Live link](https://hzrspacetraveller.netlify.app/)
 
 # Getting Started with Create React App
 
